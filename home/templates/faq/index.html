@@ -1,3 +1,33 @@
 {% extends 'base.html' %}
 {% block title %} FAQ {{block.super}} {% endblock %}
-{% block content %} We are in faq page {% endblock %}
+{% block content %}
+<div>
+    <p>We are in faq page</p>
+    <form method="post" action="/home/contact-us/">
+        {% csrf_token %}
+        <div class="form-control">
+            <label class="label">
+                <span class="label-text">Your Email</span>
+            </label>
+            <label class="input-group">
+                <span class="text-base">Email</span>
+                <input name="email" type="text" placeholder="info@site.com" class="input input-bordered" />
+            </label>
+        </div>
+        <div class="form-control">
+            <label class="label">
+                <span class="label-text">Your Password</span>
+            </label>
+            <label class="input-group">
+                <span class="text-base">Password</span>
+                <input name="password" type="password" placeholder="info@site.com" class="input input-bordered" />
+            </label>
+        </div>
+        <div class="flex justify-center my-2">
+            <button type="submit" class="btn btn-accent">Submit</button>
+        </div>
+    </form>
+
+</div>
+
+{% endblock %}

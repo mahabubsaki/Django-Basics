@@ -3,4 +3,16 @@
 {% block title %} Contact Us {{block.super}} {% endblock %}
 {% block content %}
 <p>We are in contact us page</p>
+
+
+{% if email and password %}
+<div>
+    <p>Email : {{email}}</p>
+    <p>Password : {{password}}</p>
+</div>
+{% else %}
+<div>
+    No data submitted with form
+</div>
+{% endif %}
 {% endblock %}

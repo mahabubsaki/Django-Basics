@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load name_converter %}
+{% load crispy_forms_tags %}
+{% block title %} Django Form {{block.super}} {% endblock %}
+{% block content %}
+
+<div>
+    <h1>This is django form</h1>
+    <form enctype="multipart/form-data" method="post" class="flex flex-col">
+        {% csrf_token %}
+        {{form|crispy}}
+        <div class="flex justify-center my-2">
+            <button type="submit" class="btn btn-accent">Submit</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
