@@ -1,0 +1,6 @@
+{% load name_converter %}
+<ol class="list-decimal">
+    {% for x in names %}
+    <li>{{ x.name }}</li>
+    {% endfor %}
+</ol>

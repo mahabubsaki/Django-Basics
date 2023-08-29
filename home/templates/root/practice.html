@@ -1,0 +1,39 @@
+{% comment %} we have to load static files to use {% endcomment %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+
+  <body>
+    <h1>Root</h1>
+    <h1>Name : {{name}}</h1>
+    {% if age >= 18 %}
+    <p>You are adult as your age is {{age}}</p>
+    {% else %}
+    <p>You are not adult as your age is {{age}}</p>
+    {% endif %}
+    <div>
+      {% for x in cars %}
+      <div style="display: flex; align-items: center; gap: 20px">
+        <p>Car Name: {{ x.name }}</p>
+        <p>Year: {{ x.year }}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+    <img src="{% static 'assets/CAPTURE.png' %}" />
+    <script src="{% static 'js/index.js' %}"></script>
+  </body>
+</html>

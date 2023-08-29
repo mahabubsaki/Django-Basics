@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load name_converter %}
+{% block title %} About Us {{block.super}} {% endblock %}
+{% block content %}
+<div class="flex flex-col items-center gap-2">
+    <p>We are in about us page {{name | name_converter:'reverse'}}</p>
+    <div>{% demo %}</div>
+</div>
+{% endblock %}
