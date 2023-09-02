@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-k!5ubd=v7-svhvj+m7s1#ec@qtpfkv07l5o*red53jwqr)amhx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app','now.sh','127.0.0.1','localhost']
 
 
 # Application definition
@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'home',
     "crispy_forms",
     "crispy_bootstrap5",
-    'dashboard'
+    'dashboard',
+    'models_intro',
+    'book'
 ]
 
 MIDDLEWARE = [

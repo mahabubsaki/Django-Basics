@@ -25,7 +25,9 @@ from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.homePage),
+    # path('',views.homePage),
+    path('',include('book.urls')),
     path('home/',include('home.urls')),
-    path('dashboard/',include('dashboard.urls'))
+    path('dashboard/',include('dashboard.urls')),
+    path('models-intro/',include('models_intro.urls')),
 ] + static(settings.MEDIA_URL,document_root = settings.MEDIA_URL)

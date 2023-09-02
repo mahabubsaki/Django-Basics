@@ -1,0 +1,57 @@
+{% extends 'book-app/base.html' %}
+
+{% block page_title %}
+All Books
+{% endblock %}
+
+
+{% block main_content %}
+<div class="w-screen">
+    <h1 class="text-center text-3xl font-bold my-4">Here is list of all books</h1>
+    <div class="overflow-x-auto">
+        {% if books %}
+
+        <div class="">
+            <table class="table">
+
+                <thead>
+                    <tr class="bg-base-200">
+                        <th>Id</th>
+                        <th>Book Name</th>
+                        <th>Book Author</th>
+                        <th>Book Category</th>
+                        <th>First Publication</th>
+                        <th>Last Publication</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {% for book in books %}
+                    <tr>
+                        <td>{{book.id}}</td>
+                        <td>{{book.book_name}}</td>
+                        <td>{{book.author}}</td>
+                        <td>{{book.category}}</td>
+                        <td>{{book.first_pub}}</td>
+                        <td>{{book.last_pub}}</td>
+                        <td class="flex flex-col gap-2">
+                            <a href="{% url 'delete-book' id=book.id %}"><button class="btn btn-error">Delete</button>
+                            </a>
+                            <a href="{% url 'edit-book' id=book.id %}"><button class="btn btn-info">Update</button>
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        {% else %}
+        <p class="text-center">No Books Found in Database</p>
+        {% endif %}
+
+    </div>
+    <p>s</p>
+</div>
+{% endblock %}

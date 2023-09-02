@@ -1,0 +1,18 @@
+{% extends 'book-app/base.html' %}
+
+{% block page_title %}
+Add Book
+{% endblock %}
+
+
+{% block main_content %}
+<div>
+    <h1 class="text-center text-3xl font-bold my-4">Add Book To Listing</h1>
+    <form accept="/book-app/all-books/" method="post" class="max-w-xl mx-auto">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit" class="btn btn-accent mx-auto block my-4">Add</button>
+    </form>
+
+</div>
+{% endblock %}

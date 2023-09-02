@@ -18,3 +18,11 @@
 - We can create a common html file on root folders template and then we can extend it on other html files
 - In our application folder we can create our custom filters and use it . The folder name should be "templatetags"
 - We can create our custom template with the combination custom filters
+
+## Django Models
+
+- We have to define models for database releted work
+- Model file only exist in main project folder. And after creating model we have give command "python manage.py makemigrations" to create sql from our models classes
+- If we want to create a table from the sql code we have to run "python manage.py migrate"
+- If we make change on our models class then we have to set default values on new properties and run "python manage.py makemigrations" and "python manage.py migrate"
+- We can create a superuser by running this command "py manage.py createsuperuser" and navigate to "/admin" route to explore all our models and data
