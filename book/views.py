@@ -1,11 +1,15 @@
 from django.shortcuts import render,redirect
 from book.forms import BookStoreForm
 from book.models import BookStoreModel
+from django.views.generic import TemplateView
 
 # Create your views here.
+#function view
 def home(request):
     return render(request,"book-app/home.html")
-
+# class view
+class HomeClassView(TemplateView):
+    template_name = 'book-app/home.html'
 
 def add_book(requset):
     if requset.method == 'POST':
